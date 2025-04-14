@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARSH MISHRA</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            cursor: url('cursor.png'), auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+        }
+        .header h1 {
+            color: #ff9800;
+            margin: 0;
+        }
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        nav {
+            background-color: #1f1f1f;
+            padding: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow effect */
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 21px;
+            transition: color 0.3s ease-in-out;
+        }
+        nav a:hover {
+            color: #ff9800;
+        }
+        .section {
+            padding: 50px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+            animation: moveBackground 20s linear infinite;
+        }
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+        #about::before {
+            background-image: url('https://i.gifer.com/origin/a9/a9176696b8740c402d84b55374ea0107_w200.gif');
+        }
+        #trainings::before {
+            background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjNteWZ4aDdrOHVmZmprcWh1cTVtbGp0Y2xhemw0NjdxcTh0ajMyaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AdtB8TtizElk0OrRGR/giphy.gif');
+        }
+        #projects::before {
+            background-image: url('https://img95.lovepik.com/photo/40107/3064.gif_wh860.gif');
+        }
+        #certifications::before {
+            background-image: url('https://img95.lovepik.com/photo/40107/3064.gif_wh860.gif');
+        }
+        #extra::before {
+            background-image: url('https://img95.lovepik.com/photo/40107/3064.gif_wh860.gif');
+        }
+        #contact::before {
+            background-image: url('https://img95.lovepik.com/photo/40107/3064.gif_wh860.giff');
+        }
+        h2 {
+            color: #ff9800;
+        }
+        .contact {
+            background-color: #1f1f1f;
+            padding: 20px;
+        }
+        .certifications-list a {
+            display: -webkit-inline-box;
+            color: #ff9800;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+        .projects-container {
+            display: flex;
+            flex-wrap: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .project {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            transition: transform 0.4s;
+        }
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        .extra-section {
+            background-color: #1a1a1a;
+            padding: 50px;
+        }
+        .github-link {
+            margin-top: 20px;
+        }
+        .github-link a {
+            color: #ff9800;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        h3 {
+            color: #ff9800;
+        }
+        .extra-section h3, .extra-section p b {
+            color: #ff9800; /* Change to a lighter color for better visibility */
+        }
+        .skills-section, .internships-section {
+            background-color: #1a1a1a;
+            padding: 50px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .skill {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+        }
+        .skill img {
+            width: 50px;
+            height: 50px;
+        }
+        .skill p {
+            color: #ff9800;
+            margin-top: 10px;
+        }
+        .internship {
+            background-color: #2a2a2a;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+        .internship h4 {
+            color: #ff9800;
+        }
+        .internship a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+        .internship a:hover {
+            text-decoration: underline;
+        } 
+    .internship img {
+        width: 100%;
+        mix-blend-mode: multiply;
+    }
+
+        .project-links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .project-links a {
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+        .project-links a:hover {
+            color: #ffffff;
+        }
+        .linkedin-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .badges-section {
+            background-color: #1a1a1a;
+            padding: 50px;
+            margin: 20px 0;
+            border-radius: 20px;
+        }
+        .badges-container {
+            display: flex;
+            flex-wrap: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .badge {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+        }
+        .badge img {
+            width: 70px;
+            height: 70px;
+        }
+        .badge p {
+            color: #ff9800;
+            margin-top: 10px;
+        }
+        .badge-description {
+        color: #ff9800;
+        margin-top: 10px;
+        font-size: 12px;
+        white-space: nowrap;
+        position: absolute;
+        bottom: 10px;
+        left: 100%;
+        animation: moveText 10s linear infinite;
+    }
+    @keyframes moveText {
+        0% {
+            left: 100%;
+        }
+        100% {
+            left: -100%;
+        }
+    }
+    .resume-download {
+        margin-top: 20px;
+    }
+    .resume-download a {
+        color: #ff9800;
+        font-size: 18px;
+        text-decoration: none;
+        border: 2px solid #ff9800;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    .resume-download a:hover {
+        background-color: #ff9800;
+        color: #1a1a1a;
+    }
+    .contact-icon {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 10px;
+        object-fit: cover;
+    }
+    .contact p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .services-section {
+        background-color: #1a1a1a;
+        padding: 50px;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .service {
+        background-color: #2a2a2a;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 250px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .service img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .service h3 {
+        color: #ff9800;
+        margin-bottom: 10px;
+    }
+    .service p {
+        color: #ffffff;
+        font-size: 14px;
+    }
+    .service:hover {
+        transform: scale(1.05);
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>HARSH MISHRA</h1>
+            <p>ANDROID DEVELOPER/ JAVA DEVELOPMENT<br> CLOUD PRACTITIONER!!</p>
+        </div>
+         <img src="image1.jpg" alt="">
+    </div>
+    
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#trainings">Trainings</a>
+        <a href="#projects">Projects</a>
+        <a href="#badges">Badges</a>
+        <a href="#certifications">Certifications & Licenses</a>
+        <a href="#internships">Internships</a>
+        <a href="#extra">Extra Activities</a>
+        <a href="#resume">Resume</a>
+       
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        
+        
+
+    </nav>
+    
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>  
+            I am a passionate and dedicated software developer with a strong foundation in Java, Android development, and cloud technologies.<br> My expertise spans across building robust applications, including Android projects, web applications, and enterprise solutions.</br> I have successfully completed multiple certifications in cloud computing, artificial intelligence, and data science, showcasing my commitment to continuous learning. With hands-on experience in developing scalable applications, integrating APIs, and optimizing system performance, I aim to leverage my technical skills to drive innovation and efficiency. My portfolio reflects a diverse range of projects, leadership achievements, and contributions to open-source platforms, demonstrating my ability to solve real-world problems through technology.</p>
+    </section>
+    
+    <section id="trainings" class="section">
+        <h2>Trainings</h2>
+        <p>  
+
+            - Internshala Training & Internships: Successfully completed a 2-month training and internship program, gaining hands-on experience in software development and real-world project implementation.  
+            - AI & ML with Data Science @ YBI Foundation: Acquired practical knowledge in artificial intelligence, machine learning, and data science through a structured 2-month training and internship program.  
+            - Google Ads Apps Certification: Achieved Google Ads Apps Certification, showcasing expertise in app promotion strategies and digital advertising.  
+            - Continuous Learning @ Google Digital Academy: Engaged in multiple learning paths, enhancing skills in cloud computing, digital marketing, and emerging technologies.  
+            - Job Simulations @ Walmart: Completed various job simulations, gaining insights into business operations, problem-solving, and corporate decision-making.  
+            - Data Analysis & Visualization @ Accenture North America: Developed expertise in data analytics, visualization, and business intelligence tools through a structured training program.  
+            - Badges & Achievements: Earned numerous skill-based badges across different platforms, highlighting a commitment to continuous learning and professional development.  
+            
+            These experiences have strengthened my technical and analytical skills, preparing me for real-world challenges in the tech industry. 🚀</p>
+    </section>
+    
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3Yy1Hrrandp0AM0k2rwxp0A9BHN5mdo-PNhhnLNozQUAorIKwx51lCvTtz3buEJ7LSJdwK2KnSOCsuvhgFKcd6SBtNFskB6eDyPfVq_nRc1PwMxsW6IsNnX9OX52IGtm5TZ1TC3k5qA-pRmJvaHDV6xkxJQwtp3BgbelpDtGAAhJRZUBR6zYhiWmmMB8/s1600/image3.gif" alt="Project 1">
+                <h3>ANDROID EMULATOR</h3>
+                <p>
+                    Developed a feature-rich Android Emulator Application with multiple integrated functionalities, providing an interactive and user-friendly experience.  
+                    - Built-in Chrome Browser:   
+                    - YouTube Integration: 
+                    - Power Control:   
+                    - Volume Adjustments:   
+                    - Screenshot Capability:   
+                    expertise in Android development, UI/UX design, API integrations,and system controls 🚀
+                </p>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/posts/harshmishra31_codingabrjourney-androidabrdevelopment-activity-7271161022139252736-BbGT?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734" target="https://www.linkedin.com/posts/harshmishra31_codingabrjourney-androidabrdevelopment-activity-7271161022139252736-BbGT?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734">Project Demo</a>
+                    
+                    </a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://blog.flutterflow.io/content/images/2022/04/todo_auth_in_action.gif" alt="Project 2">
+                <h3>AUTHENTICATION SYSTEM APP </h3>
+                <p>Authentication System App Specification (Built with FlutterFlow):  
+
+                    Developed a secure Authentication System App using FlutterFlow, providing a seamless and user-friendly authentication experience. Key specifications include:  
+                    
+                    - User Registration & Login:   
+                    - Secure Authentication:   
+                    - Password Recovery:  
+                    - Role-Based Access:    
+                    - Biometric Authentication:    
+                    - User Profile Management:    
+                    - Dark Mode Support:    
+                    - Smooth Navigation & Animations:  
+                    
+                    This project highlights expertise in FlutterFlow, Firebase integration, UI/UX design, and security best practices, making it an ideal solution for modern authentication needs. 🚀</p>
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/posts/harshmishra31_androiddevelopment-authenticationsystem-cloudintegration-activity-7291100426211311617-V-jU?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734" target="https://www.linkedin.com/posts/harshmishra31_androiddevelopment-authenticationsystem-cloudintegration-activity-7291100426211311617-V-jU?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734">Project Demo</a>
+                        
+                        </a>
+                    </div>
+                       </div>
+            <div class="project">
+                <img src="https://miro.medium.com/v2/resize:fit:1280/0*TyIxdS4j_m2-iN83.gif" alt="Project 3">
+                <h3>CUSTOMER CHURN MODEL</h3>
+                <p> 
+                    Developed a Customer Churn Prediction Model using machine learning to analyze customer behavior, identify churn risks, and enhance retention strategies. The project involved data preprocessing, exploratory data analysis (EDA), feature engineering, and model development using Logistic Regression, Decision Trees, Random Forest, and XGBoost. Evaluated performance with precision, recall, F1-score, and AUC-ROC metrics to select the best model. Delivered business insights to reduce churn and improve customer engagement.
+                    Technologies Used: Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn.  
+                    This project demonstrates expertise in AI/ML, Data Science, and Business Analytics to drive data-driven decision-making. 🚀</p>
+                    <div class="project-links">
+                        <a href="https://www.example.com/demo" target="_blank">Project Demo</a>
+                        
+                                                    </a>
+                    </div>
+            </div>
+            <div class="project">
+                <img src="https://i.pinimg.com/originals/f9/98/0f/f9980fdb73ff0acc69d70a8997acb5fa.gif" alt="Project 3">
+                <h3>MEAL PLANNER APP</h3>
+                <p> 
+                    Developed a Meal Planner App using FlutterFlow, enabling users to efficiently plan, track, and manage their meals. Key features include custom meal scheduling, recipe suggestions, nutritional tracking, and grocery list integration. The app offers a user-friendly UI with smooth navigation, Firebase authentication for secure login, and real-time database storage for meal preferences.   
+                    Technologies Used: FlutterFlow, Firebase, API integrations.  
+                    🚀</p>
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/posts/harshmishra31_meal-planner-project-built-with-flutter-activity-7292209923566772225-Rshv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734" target="https://www.linkedin.com/posts/harshmishra31_meal-planner-project-built-with-flutter-activity-7292209923566772225-Rshv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734">Project Demo</a>
+                        
+                        </a>
+                    </div>
+                    <div class="project">
+                        <img src="game java.webp" alt="Project 3">
+                        <h3>NUMBER-GUESSING-GAME</h3>
+                        <p>  
+                            A simple Java-based console game where the user guesses a randomly generated number within a given range. The game provides feedback on whether the guess is too high, too low, or correct and tracks the number of attempts.
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/harshmishra31_meal-planner-project-built-with-flutter-activity-7292209923566772225-Rshv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734" target="https://www.linkedin.com/posts/harshmishra31_meal-planner-project-built-with-flutter-activity-7292209923566772225-Rshv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734">Project Demo</a>
+                                
+                                </a>
+                            </div>
+
+        </div>
+    </section>
+    
+    <section id="certifications" class="section">
+        <h2>Certifications & Licenses</h2>
+        <div class="certifications-list">
+            <a href="https://drive.google.com/file/d/16TIuMVwAmslRvZkph2zkaW96PT2lyeL5/view?usp=sharing" target="_https://drive.google.com/file/d/16TIuMVwAmslRvZkph2zkaW96PT2lyeL5/view?usp=sharing">INTERNSHALA </a>
+            <a href="https://drive.google.com/file/d/1kVaAEt53JbKIih88FjJ0pb8sa7S6-Hav/view?usp=sharing" target="https://drive.google.com/file/d/1kVaAEt53JbKIih88FjJ0pb8sa7S6-Hav/view?usp=sharing">CODSOFT PVT.LTD.</a>
+            <a href="https://drive.google.com/file/d/1esGL1YCNO1g0z6uVemt95JaTxhCbBc_L/view?usp=sharing" target="https://drive.google.com/file/d/1esGL1YCNO1g0z6uVemt95JaTxhCbBc_L/view?usp=sharing">SIMPLILEARN</a>
+            <a href="https://drive.google.com/file/d/1iFzKKPlrtQBzmCox05rfh13_K5MtysS6/view?usp=sharing" target="https://drive.google.com/file/d/1iFzKKPlrtQBzmCox05rfh13_K5MtysS6/view?usp=sharing">IOT</a>
+            <a href="https://drive.google.com/file/d/1js7F5k6H9CJpHdP0yWbd9uyi_e-of_sr/view?usp=sharing" target="https://drive.google.com/file/d/1js7F5k6H9CJpHdP0yWbd9uyi_e-of_sr/view?usp=sharing">TOPPERSWPRLD</a>
+            <a href="https://drive.google.com/file/d/1jrqfoiBuYVJmKCmvl_xDqwFXh28LY4ZD/view?usp=drive_link"target="https://drive.google.com/file/d/1jrqfoiBuYVJmKCmvl_xDqwFXh28LY4ZD/view?usp=drive_link">GREAT LEARNING</a>
+            <a href="https://drive.google.com/file/d/1ji9ewnfeB4FQXqCDaWJBdoNnHDBooOV-/view?usp=sharing" target="https://drive.google.com/file/d/1ji9ewnfeB4FQXqCDaWJBdoNnHDBooOV-/view?usp=sharing">SIGNIMUS TECHNOLOGIES PVT. LTD.</a>
+            <a href="https://drive.google.com/file/d/1kkjRTVajCvakg3fV7Kixbd2J-AazZ0_h/view?usp=sharing" target="https://drive.google.com/file/d/1kkjRTVajCvakg3fV7Kixbd2J-AazZ0_h/view?usp=sharing">DATA FLAIR</a>
+            <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://media.licdn.com/dms/document/media/v2/D561FAQG9DyN18TvaUQ/feedshare-document-pdf-analyzed/feedshare-document-pdf-analyzed/0/1727254329121?e=1740009600&v=beta&t=n5BGiZrARI8AYcOYbiSRELTLsib8zDsZ-3R9qrzHhvs" target="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://media.licdn.com/dms/document/media/v2/D561FAQG9DyN18TvaUQ/feedshare-document-pdf-analyzed/feedshare-document-pdf-analyzed/0/1727254329121?e=1740009600&v=beta&t=n5BGiZrARI8AYcOYbiSRELTLsib8zDsZ-3R9qrzHhvs">REDHAT ACADEMY</a>
+            <a href="https://drive.google.com/file/d/1RBrHQXIvYK4A2yCR1oEjVdmvYLCpO7us/view?usp=sharing" target="https://drive.google.com/file/d/1RBrHQXIvYK4A2yCR1oEjVdmvYLCpO7us/view?usp=sharing">GOOGLE </a>
+            <a href="https://drive.google.com/file/d/1RLXD4nF4o0f0uPMWX9m6A57683frTmpK/view?usp=sharing" target="https://drive.google.com/file/d/1RLXD4nF4o0f0uPMWX9m6A57683frTmpK/view?usp=sharing">Be10X</a>
+            <a href="file:///C:/Users/hp/OneDrive/Desktop/DOCUMENTS/WebDevelopment%20IBM.pdf" target="file:///C:/Users/hp/OneDrive/Desktop/DOCUMENTS/WebDevelopment%20IBM.pdf">IBM </a>
+            <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="https://learn.microsoft.com/en-us/users/me/achievements#badges-section">MICROSOFT </a>
+            <a href="-" target="_-">ACCENTURE </a>
+            <a href="-" target="_-">WALMART </a>
+
+            
+        </div>
+    </section>
+    
+    <section id="extra" class="section extra-section">
+        <h2>EXTRA CURRICULAR ACTIVITIES & LEARNING!!</h2>
+        <div class="activity-box">
+            <h3>Extracurricular Activities:</h3>
+            <div class="activity">
+                <h4>Hospitality Management:</h4>
+                <p>Gained insights into customer service, event planning, and organizational skills.</p>
+            </div>
+            <div class="activity">
+                <h4>BHARTIYA SANSKRITI GYAN PARIKSHA:</h4>
+                <p>Demonstrated knowledge of Indian culture, heritage, and traditions through this prestigious examination.</p>
+            </div>
+            <div class="activity">
+                <h4>CHS Entrance Examination (Class 11th):</h4>
+                <p>Successfully cleared the competitive entrance test for Central Hindu School.</p>
+            </div>
+        </div>
+        <div class="activity-box">
+            <h3>Career Development & Continuous Learning:</h3>
+            <div class="activity">
+                <h4>Core Java Projects:</h4>
+                <p>Developed a Car Rental System and ATM Interface Application, implementing OOP concepts, JDBC, and real-world functionalities.</p>
+            </div>
+            <div class="activity">
+                <h4>Android Development:</h4>
+                <p>Built multiple applications, including a feature-rich Android project and a Simple UI Application in Java.</p>
+            </div>
+            <div class="activity">
+                <h4>Front-End Development:</h4>
+                <p>Created a responsive landing page using HTML, CSS, JavaScript, and Bootstrap.</p>
+            </div>
+            <div class="activity">
+                <h4>Cloud Certifications & Learning:</h4>
+                <p>Completed CCAIP Course by Google Cloud Skill Boost.<br>
+                Earned Databricks Lakehouse Fundamentals certification.<br>
+                Learning Microsoft Azure and earning multiple badges related to Java and cloud deployment.</p>
+            </div>
+            <div class="activity">
+                <h4>AI & ML Internship:</h4>
+                <p>Currently a 2-month virtual intern at YBI Foundation, focusing on Data Science, AI, and ML.</p>
+            </div>
+            <div class="activity">
+                <h4>FlutterFlow Development:</h4>
+                <p>Built a Meal Planner application showcasing expertise in no-code/low-code app development.</p>
+            </div>
+            <div class="activity">
+                <h4>Certifications & Achievements:</h4>
+                <p>Earned Google Ads Apps Certification for expertise in digital advertising.<br>
+                Achieved Leadership Bronze Badge (680 points) and progressing towards Silver.</p>
+            </div>
+        </div>
+        <h2>BADGES & ACHIEVEMENTS EARNED</h2>
+        <p> <b>Microsoft:</b>
+            Microsoft Azure Fundamentals
+           <b>Google: </b> 
+             Google Cloud CCAIP
+            Google Ads Apps Certification
+             Google Play Academy
+           <b> IBM: </b>
+            IBM Skill Build Web Development
+           <b> Databricks: </b>
+            Databricks Lakehouse Fundamentals
+            <b>Android Development:</b>
+            Android Studio
+           <b> Professional & Job Simulations:</b>
+            Fidelity Badges
+            Job Simulations (Accenture North America, Walmart, etc.)
+            </p>
+        <h2>LEARNING PLATFORMS : </h2>
+        <p>Here’s a structured list of the learning platforms which i use daily for career development:  
+
+             **Learning Platforms:**  <br>
+            - Microsoft Learn<br>  
+            - Google Cloud Skill Boost<br>  
+            - IBM Skills Network<br> 
+            - Databricks Academy <br> 
+            - Android Developers Platform <br>
+            - Fidelity Job Simulation Platform <br> 
+            - Accenture North America Job Simulation<br>  
+            - Walmart Job Simulation 
+            - Udemy<br>  
+            - Coursera<br>  
+            - LinkedIn Learning<br> 
+            - YouTube<br> (for technical learning and tutorials)  
+            
+            🚀</p>
+    </section>
+
+    <section id="skills" class="section skills-section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="javaimage.png" alt="JAVA">
+                <p>JAVA</p>
+            </div>
+            <div class="skill">
+                <img src="https://static-00.iconduck.com/assets.00/kotlin-icon-1024x1024-x00xpx34.png" alt="KOTLIN">
+                <p>KOTLIN  </p>
+            </div>
+            <div class="skill">
+                <img src="https://images.seeklogo.com/logo-png/44/2/android-studio-logo-png_seeklogo-443366.png" alt="ANDROID STUDIO">
+                <p>ANDROID STUDIO  </p>
+            </div>
+            <div class="skill">
+                <img src="https://icons.iconarchive.com/icons/simpleicons-team/simple/256/springboot-icon.png" alt="SPRINGBOOT">
+                <p>SPRING-BOOT  </p>
+            </div>
+            <div class="skill">
+                <img src="google cloud.png" alt="CLOUD COMPUTING">
+                <p>CLOUD COMPUTING  </p>
+            </div>
+            <div class="skill">
+                <img src="lakehouse-fundamentals.png" alt=" DATABRICKS LAKEHOUSE ">
+                <p>DATABRICKS LAKEHOUSE </p>
+            </div>
+            <div class="skill">
+                <img src="firebase.png" alt="FIREBASE">
+                <p>FIREBASE  </p>
+            </div>
+            <div class="skill">
+                <img src="flutter.png" alt="FLUTTER">
+                <p>FLUTTER </p>
+            </div>
+            <div class="skill">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh__PxVCZNlPha7HOhV8jsAHnCAIvFotOCPw&s" alt="FLUTTER FLOW">
+                <p>FLUTTER FLOW  </p>
+            </div>
+            <div class="skill">
+                <img src="https://cdn-icons-png.flaticon.com/512/4299/4299956.png" alt="SQL">
+                <p>SQL </p>
+            </div>
+            <div class="skill">
+                <img src="https://www.svgrepo.com/show/102278/html-document.svg" alt="front-end languages">
+                <p>HTML &CSS  </p>
+            </div>
+            <div class="skills-container">
+                <div class="skill">
+                    <img src="javascript.webp" alt="JAVASCRIPT">
+                    <p>JAVASCRIPT</p>
+                </div>
+            
+            <!-- Add more skills as needed -->
+        </div>
+    </section>
+
+    <section id="internships" class="section internships-section">
+        <h1>Internships</h1>
+        <div class="internship">
+            <h3><B>TOPPERSWORLD</B></h3>
+            <DIV>
+                <img src="image.png" alt="" srcset="" style="width: 100%;mix-blend-mode:color-multiply;">
+            </DIV>
+            <p font-size="48px">Role: WEB DEVELOPER</p>
+            <a href="https://www.linkedin.com/posts/harshmishra31_hello-there-ive-completed-my-internship-activity-7120298967896080384-s9bE?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734" target="https://www.linkedin.com/posts/harshmishra31_hello-there-ive-completed-my-internship-activity-7120298967896080384-s9bE?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734">View on LinkedIn</a>
+        </div>
+        <div class="internship">
+            <h3><b>CODSOFT</b></h3>
+            <p><b>ROLE : JAVA DEVELOPER</b></p>
+            <div>
+                <img src="codsoft.avif" alt="codsoft" srcset="" style="width:100%;mix-blend-mode: color-multiply;">
+            </div>
+            <a href="https://www.linkedin.com/in/your-profile" target="https://www.linkedin.com/posts/harshmishra31_java-programming-virtual-intership-coding-activity-7284557716549779457-Of38?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADwhO7QBprFcLJZJblqvzelJEKdrtWTg734">View on LinkedIn</a>
+        </div>
+        <div class="internship">
+            <h3><b>INTERNSHALA</b></h3>
+            <p><b>ROLE :  JAVA DEVELOPER</b></p>
+            <div>
+                <img src="https://e7.pngegg.com/pngimages/95/190/png-clipart-internshala-microsoft-student-partners-birla-institute-of-technology-and-science-pilani-student-blue-text.png" alt="codsoft" srcset="" style="width:100%;mix-blend-mode: color-multiply;">
+            </div>
+            <a href="https://trainings.internshala.com/view_certificate/b5052egyasi/45ifw88prs0/" target="https://trainings.internshala.com/view_certificate/b5052egyasi/45ifw88prs0/">View on Internshala</a>
+            
+        </div>
+        <!-- Add more internships as needed -->
+    </section>
+    <section id="badges" class="section badges-section">
+        <h2>BADGES</h2>
+        <div class="badges-container">
+            <div class="badge">
+                <img src="google ads app.png" alt="Badge 1">
+                <p>THE GOOGLE ADS APP CERTIFICATION</p>
+            </div>
+            <div class="badge">
+                <img src="micosoft.jpg" alt="Badge 2">
+                <p>MICROSFT AZURE</p>
+            </div>
+            <div class="badge">
+                <img src="lakehouse-fundamentals.png" alt="Badge 3">
+                <p>DATABRICKS LAKEHOUSE FUNDAMENTALS </p>
+            </div>
+            <div class="badge">
+                <img src="IBM web dev.png" alt="Badge 4">
+                <p>WEB DEVELOPMENT FUNDAMENTALS </p>
+            </div>
+            <div class="badge">
+                <img src="CCAIP GOOGLE.webp" alt="Badge 5">
+                <p><br> GOOGLE CONTACT CENTER AI(CCAIP) </p>
+            </div>
+            <div class="badge">
+                <img src="generative AI.png" alt="Badge 6">
+                <p> INTRODUCTION TO GENERATIVE  AI   </p>
+            </div>
+            <div class="badge">
+                <img src="professional machine learning guide.png" alt="Badge 7">
+                <p>  MACHINE LEARNING STUDY GUIDE  </p>
+            </div>
+            <div class="badge">
+                <img src="android dev.png" alt="Badge 8">
+                <p>  ANDROID STUDIO  </p>
+            </div>
+            <!-- Add more badges as needed -->
+        </div>
+    </section>
+    
+    <section id="services" class="section services-section">
+    <h2>Services</h2>
+    <div class="services-container">
+        <div class="service">
+            <img src="web development.png" alt="Service 1">
+            <h3>Web Development</h3>
+            <p>Building responsive and modern websites using the latest technologies.</p>
+        </div>
+        <div class="service">
+            <img src="android dev.png" alt="Service 2">
+            <h3>Android App Development</h3>
+            <p>"Innovative App Development: Building Scalable, User-Friendly Mobile Solutions with Java, Kotlin, Flutter, and AI-Driven Features for Seamless Experiences."</p>
+        </div>
+        <div class="service">
+            <img src="cloud computing.webp" alt="Service 3">
+            <h3>Cloud Solutions</h3>
+            <p>Providing scalable and secure cloud solutions to meet your business needs.</p>
+        </div>
+        <div class="service">
+            <img src="java development.webp" alt="Service 4">
+            <h3>Java Development</h3>
+            <p>Java is a popular choice for developers . It's used to build a wide range of applications, including desktop applications, digital services, and more. </p>
+        </div>
+        <!-- Add more services as needed -->
+    </div>
+</section>
+    
+    <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>
+        <img src="linked2.png" alt="LinkedIn" class="contact-icon">
+        <a href="https://www.linkedin.com/in/harshmishra31" target="https://www.linkedin.com/in/harshmishra31">Visit my LinkedIn profile</a>
+    </p>
+    <p>
+        <img src="github logo.webp" alt="GitHub" class="contact-icon">
+        <a href="https://github.com/RM7402704" target="_blank">Visit My GitHub</a>
+    </p>
+    <p>
+        <img id="e-mail" src="https://i.pinimg.com/736x/7c/aa/61/7caa619b640733f3bcf72ae3de1643b5.jpg" alt="Email" class="contact-icon">
+        <a href="mailto:rm7402704@gmail.com">Email me</a>
+    </p>
+    <div class="resume-download">
+        <h3>RESUME</h3>
+        <a href="c:\Users\hp\OneDrive\Documents\resume 1.docx" download="Harsh_Mishra_Resume.pdf">Download My Resume</a>
+    </div>
+</section>
+
+    
+</body>
+</html>
